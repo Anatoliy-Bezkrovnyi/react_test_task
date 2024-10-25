@@ -1,0 +1,22 @@
+.navLinks {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+  font-weight: 500;
+  font-size: 20px;
+  margin-left: 20px;
+}
+
+.navLinks li a {
+  text-decoration: none;
+  color: black;
+}
+
+.navLinks li:hover {
+  text-decoration: underline;
+  color: red;
+}
+
+.navLinks li a.isActive {
+  color: red;
+}
