@@ -1,0 +1,26 @@
+.heroSection {
+  width: 100%;
+  height: 696px;
+  display: flex;
+  flex-direction: column;
+  background-image: url("../../assets/HeroImage/tracks_hero_image_1x.jpeg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+@media (min-resolution: 192dpi) {
+  .heroSection {
+    background-image: url("../../assets/HeroImage/tracks_hero_image_2x.jpeg");
+  }
+}
+
+.heroContent {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  align-items: left;
+  justify-content: center;
+  gap: 40px;
+}

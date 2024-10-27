@@ -9,16 +9,13 @@ const activeClassName = ({ isActive }) => {
 
 const Navigation = () => { 
 
-  return (
-      <header className={styles.header}>
+  return (      
         <nav>
           <ul className={styles.navLinks}>
             <li><NavLink className={activeClassName} to="/">Home</NavLink></li>
             <li><NavLink className={activeClassName} to="/catalog">Catalog</NavLink></li>            
           </ul>
-        </nav>
-      </header>
-      
+        </nav>      
     )
 }
  

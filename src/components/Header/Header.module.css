@@ -1,9 +1,27 @@
 .header {
+  border-bottom: 1px solid var(--header-border-color);
+  padding: 24px 64px;
+  height: 72px;
+  background: var(--header-background-color);
   position: sticky;
   top: 0;
   left: 0;
-  background-color: #fff;
-  box-shadow: 0 1px 5px #0003, 0 2px 2px #00000024, 0 3px 1px -2px #0000001f;
+  width: 100%;
   z-index: 1;
-  padding: 10px 0;
+}
+
+.wrapper {
+  display: flex;
+  gap: 450px;
+  align-items: center;
+  position: relative;
+}
+
+.logo {
+  position: absolute;
+  top: 0;
+  left: var(--default-padding);
+  display: inline-flex;
+  height: 100%;
+  align-items: center;
 }

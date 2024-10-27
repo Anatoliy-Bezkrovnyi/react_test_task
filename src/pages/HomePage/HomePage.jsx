@@ -1,10 +1,12 @@
 import Header from "../../components/Header/Header";
+import HeroSection from "../../components/HeroSection/HeroSection";
+
 const HomePage = () => { 
 
     return (
         <>
         <Header />
-        <p>This is home page</p>
+        <HeroSection />
         </>
     );
 

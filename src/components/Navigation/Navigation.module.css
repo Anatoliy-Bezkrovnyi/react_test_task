@@ -1,22 +1,19 @@
 .navLinks {
   display: flex;
-  gap: 20px;
-  list-style: none;
+  gap: 32px;
+  font-family: var(--font-family);
   font-weight: 500;
-  font-size: 20px;
-  margin-left: 20px;
+  font-size: 16px;
+  line-height: 1.5;
+  text-align: center;
+  color: var(--main-color);
 }
 
-.navLinks li a {
+/* .navLinks li a {
   text-decoration: none;
   color: black;
-}
-
-.navLinks li:hover {
-  text-decoration: underline;
-  color: red;
-}
+} */
 
 .navLinks li a.isActive {
-  color: red;
+  color: var(--navigation-link-active-color);
 }

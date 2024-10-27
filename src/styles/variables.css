@@ -1,0 +1,20 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+
+:root {
+  --main-color: #101828;
+  --text-color: #475467;
+  --main-white-color: #fff;
+  --header-background-color: #f7f7f7;
+  --header-border-color: #f2f4f7;
+  --hero-text-color: #f7f7f7;
+  --inputs-color: #f7f7f7;
+  --badges-color: #f2f4f7;
+  --grey-color: #6c717b;
+  --gray-light-color: #dadde1;
+  --button-color: #e44848;
+  --button-hover-color: #d84343;
+  --navigation-link-active-color: #d84343;
+  --rate-color: #ffc531;
+  --font-family: "Inter", sans-serif;
+  --default-padding: 20px;
+}
