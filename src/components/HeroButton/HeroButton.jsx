@@ -1,8 +1,11 @@
 import styles from "./HeroButton.module.css";
+import { useNavigate } from "react-router-dom";
 const HeroButton = () => { 
 
+    const navigate = useNavigate();
+
     return (
-        <button className={styles.button}>View now</button>        
+        <button onClick={() => navigate("/catalog")} className={styles.button}>View now</button>        
     );
 }
  

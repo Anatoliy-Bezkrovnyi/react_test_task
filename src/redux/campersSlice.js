@@ -1,69 +1,60 @@
 import { createSelector, createSlice } from "@reduxjs/toolkit";
-import { fetchContacts, deleteContact, addContact } from "./campersOps";
+import { fetchCampers, fetchCamper } from "./campersOps";
 import { getFilter } from "./filtersSlice";
 
 const initialState = {
-    contacts: [],
+    campers: [],
     isLoading: false,
     error: null,
 };
 
 const campersSlice = createSlice({
-    name: "contact",
+    name: "campers",
     initialState,
     extraReducers: (builder) => {
         builder
-            .addCase(fetchContacts.pending, (state) => {
+            .addCase(fetchCampers.pending, (state) => {
                 state.isLoading = true;
             })
-            .addCase(fetchContacts.fulfilled, (state, action) => {
+            .addCase(fetchCampers.fulfilled, (state, action) => {
                 state.isLoading = false;
-                state.contacts = action.payload;
+                const { items = [] } = action.payload;
+                state.campers = [...items];
             })
-            .addCase(fetchContacts.rejected, (state, action) => {
+            .addCase(fetchCampers.rejected, (state, action) => {
                 state.isLoading = false;
                 state.error = action.payload;
             })
-            .addCase(deleteContact.pending, (state) => {
+            .addCase(fetchCamper.pending, (state) => {
                 state.isLoading = true;
             })
-            .addCase(deleteContact.fulfilled, (state, action) => {
+            .addCase(fetchCamper.fulfilled, (state, action) => {
                 state.isLoading = false;
-                state.contacts = state.contacts.filter(
+                state.campers = state.contacts.filter(
                     (contact) => contact.id !== action.payload.id
                 );
             })
-            .addCase(deleteContact.rejected, (state, action) => {
+            .addCase(fetchCamper.rejected, (state, action) => {
                 state.isLoading = false;
                 state.error = action.payload;
-            })
-            .addCase(addContact.pending, (state) => {
-                state.isLoading = true;
-            })
-            .addCase(addContact.fulfilled, (state, action) => {
-                state.isLoading = false;
-                state.contacts.push(action.payload);
-            })
-            .addCase(addContact.rejected, (state, action) => {
-                state.isLoading = false;
-                state.error = action.payload;
-            });
+            })            
     },
 });
 
 export const campersReducer = campersSlice.reducer
 
-export const selectContacts = (state) => state.contacts.contacts
-export const selectLoading = (state) => state.contacts.isLoading
-export const selectError = (state) => state.contacts.error
+export const selectCampers = (state) => state.campers.campers
+export const selectLoading = (state) => state.campers.isLoading
+export const selectError = (state) => state.campers.error
 
 
-export const selectFilteredContacts = createSelector(
-  [selectContacts, getFilter],
-  (contacts, filter) => {
-    const normalizedFilter = filter.toLowerCase();
-    return contacts.filter(({ name }) =>
-      name.toLowerCase().includes(normalizedFilter)
-    );
+export const selectFilteredCampers = createSelector(
+  [selectCampers, getFilter],
+  (campers) => {
+    // const normalizedFilter = filter.toLowerCase();
+    // // return selectCampers.filter(({ name }) =>
+    // //   name.toLowerCase().includes(normalizedFilter)
+      // );
+      return campers;
   }
 )

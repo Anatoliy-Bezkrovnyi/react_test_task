@@ -9,10 +9,10 @@
   color: var(--main-color);
 }
 
-/* .navLinks li a {
-  text-decoration: none;
-  color: black;
-} */
+.navLinks li a:link,
+a:visited {
+  color: var(--main-color);
+}
 
 .navLinks li a.isActive {
   color: var(--navigation-link-active-color);
